@@ -31,7 +31,7 @@ public class ShoppingCart {
        return  "Product not Added to Cart";
 
    }
-//   view cart contents in order of addition
+//   view cart
     public List<Products> viewCart(){
         return Cart;
     }
