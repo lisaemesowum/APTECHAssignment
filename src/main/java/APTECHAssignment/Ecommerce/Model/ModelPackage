@@ -1,0 +1,17 @@
+This Model Package is for Products , ProductCatalog, ShoppingCart.
+model is where we put our data Structures and logic that's POJO + collections.
+with encapsulation that has private, name, price, description etc. and constructor, getter and setter method.
+and toString() for printing the details.
+
+Products       >        for a single products that has name, price , etc.
+ProductCatalog >        for a collection of products for storing them.
+ShoppingCart   >        collections of products chosen by the customers
+
+
+Product Catalog (ArrayList): Add new products, remove discontinued products, retrieve product
+ by index, display all products.
+
+Shopping Cart (LinkedList): Add item to cart, remove item from cart, view cart contents in order
+  of addition.
+
+ Implement a shopping cart that supports adding, removing, and updating items dynamically.
