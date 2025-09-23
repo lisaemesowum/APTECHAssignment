@@ -1,5 +1,6 @@
 package APTECHAssignment.Ecommerce.Model;
 
+//This is like the basket in the supermarket.
 
 import java.util.Iterator;
 import java.util.LinkedList;

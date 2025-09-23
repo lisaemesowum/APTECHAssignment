@@ -15,3 +15,5 @@ Shopping Cart (LinkedList): Add item to cart, remove item from cart, view cart c
   of addition.
 
  Implement a shopping cart that supports adding, removing, and updating items dynamically.
+
+ simply a raw data classes only know how to manipulate data and store data.

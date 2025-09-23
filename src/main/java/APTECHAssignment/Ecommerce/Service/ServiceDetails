@@ -1,0 +1,13 @@
+So lets explain this area of service
+so now service class is like a helper / managers they talk to models and handle the business rules
+
+example when a customer adds to cart , the CartService makes sure its added properly.
+
+so ShoppingCart classes stores data(products + quantities).
+
+then CartService is where you put the rules and actions of  your app
+or think of it like
+CartService like the cashier or assistant that helps you add, remove , calculate totals etc.
+
+
+so cartService wraps the shopping cart model and expose methods to add/ remove/view items
