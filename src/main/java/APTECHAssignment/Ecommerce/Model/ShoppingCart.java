@@ -35,4 +35,16 @@ public class ShoppingCart {
     public List<Products> viewCart(){
         return Cart;
     }
+
+//     Checkout Summary: Display total number of items, display total cost.
+
+    public String totalNumberItem(){
+        int totalItem = Cart.size();
+        double totalCost = 0.0;
+
+        for(Products check : Cart){
+            totalCost += check.getPrice();
+        }
+        return  " 🛒🛒 Checkout Summary" + totalItem + "items  | Total Cost: $" + totalCost;
+    }
 }

@@ -30,7 +30,7 @@ public class CustomerController {
     }
 //    remove from cart
     public void RemoveFromCart(String ProductName){
-        if( userRole == Roles.ADMIN){
+        if( userRole == Roles.CUSTOMER){
             String result = shoppingCart.removeItem(ProductName);
             System.out.println(result);
         }else{
@@ -40,14 +40,26 @@ public class CustomerController {
 
 //    view cart
 
-   public  void viewCart(){
-        if(userRole == Roles.CUSTOMER){
-            System.out.println(" 🛒🛒🛒 Cart Items:");
-            for(Products CP : shoppingCart.viewCart()){
-                System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity() );
-            }
-        }else{
-            System.out.println(" ❌❌❌Cart DENIED");
-        }
+   public  void viewCart() {
+       if (userRole == Roles.CUSTOMER) {
+           System.out.println(" 🛒🛒🛒 Cart Items:");
+           for (Products CP : shoppingCart.viewCart()) {
+               System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity());
+           }
+       } else {
+           System.out.println(" ❌❌❌Cart DENIED");
+       }
    }
+    // Checkout Summary
+    void  totalNumberItem(){
+        if (userRole == Roles.CUSTOMER){
+            String total = shoppingCart.totalNumberItem();
+            System.out.println(total);
+        }else{
+            System.out.println("❌❌❌❌❌❌❌");
+        }
+    };
+
+
+
 }
