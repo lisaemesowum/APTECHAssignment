@@ -39,13 +39,17 @@ public class ShoppingCart {
 
 //     Checkout Summary: Display total number of items, display total cost.
 
-    public String totalNumberItem(){
-        int totalItem = Cart.size();
+    public int totalNumberItem(){;
+        return Cart.size();
+    }
+    public String totalCost(){
         double totalCost = 0.0;
-
+        int totalQuantity = 0;
         for(Products check : Cart){
             totalCost += check.getPrice();
+            totalQuantity++; //increment quantity
         }
-        return  " 🛒🛒 Checkout Summary: " + totalItem + "item's  | Total Cost: $" + totalCost;
+        String formattedCost = String.format("%.2f",totalCost);
+        return "📑 CheckOut Summary: " + totalQuantity + "Quanty | Total COST: 💲 " + formattedCost;
     }
 }

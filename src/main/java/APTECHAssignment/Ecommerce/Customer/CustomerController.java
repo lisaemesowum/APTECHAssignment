@@ -53,7 +53,7 @@ public class CustomerController {
     // Checkout Summary
     void  totalNumberItem(){
         if (userRole == Roles.CUSTOMER){
-            String total = shoppingCart.totalNumberItem();
+            String total = String.valueOf(shoppingCart.totalNumberItem());
             System.out.println(total);
         }else{
             System.out.println("❌❌❌❌❌❌❌");

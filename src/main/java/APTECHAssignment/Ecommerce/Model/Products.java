@@ -63,7 +63,7 @@ public class Products {
                 "             |Name         | " + name + "\n" +
                 "             |Description  | " + description + "\n" +
                 "             |Quantity     | " + quantity + "\n" +
-                "             |Price        | " + price +
+                "             |Price        | " + price +    "\n" +
                 "🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n";
     }
 }

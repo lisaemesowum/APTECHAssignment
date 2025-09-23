@@ -47,4 +47,14 @@ public class CartService {
         }
         return Scart.toString();  //converts the builder into a normal String
     }
+
+//    total item
+    public int TotalItem(){
+        return shoppingCart.totalNumberItem();
+    }
+//    total cost
+    public String totalCost(){
+        return shoppingCart.totalCost();
+    }
+
 }

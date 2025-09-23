@@ -42,5 +42,21 @@ public class ProductCatalog {
   public List<Products> displayAllProducts() {
       return products;  //return the entire list
   }
+//                            total item
+    public int totalProductItem(){
+        return products.size();
+    }
+//                      total cost
+    public String totalProductCost(){
+        double cost = 0.0;
+        int totalQuantity = 0;
+        for(Products CP : products){
+            cost += CP.getPrice();
+            totalQuantity ++;
+        }
+        // format cost 2 decimal
+        String formattedCost = String.format("%.2f",cost);
+        return "📑 CheckOut Summary: " + totalQuantity + "Quanty | Total COST: 💲 " + formattedCost;
+    }
 }
 
