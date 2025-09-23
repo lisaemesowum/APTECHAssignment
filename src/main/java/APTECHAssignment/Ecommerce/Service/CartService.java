@@ -35,11 +35,11 @@ public class CartService {
    }
 
 //   view cart
-    public String ViewCart(){
+    public String viewCart(){
         List<Products> CartItem = shoppingCart.viewCart();
-        if(CartItem.isEmpty()){
+        if(CartItem.isEmpty())
             return  "Cart is Empty";
-        }
+
         StringBuilder Scart = new StringBuilder("🛒🛒 Your Cart Items: \n");
         for(Products pro : CartItem){
             //append is like  concatenate inside the StringBuilder is like a printer

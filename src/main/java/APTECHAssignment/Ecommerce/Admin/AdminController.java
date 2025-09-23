@@ -1,19 +1,18 @@
 package APTECHAssignment.Ecommerce.Admin;
 
 import APTECHAssignment.Ecommerce.Enum.Roles;
-import APTECHAssignment.Ecommerce.Model.ProductCatalog;
 import APTECHAssignment.Ecommerce.Model.Products;
+import APTECHAssignment.Ecommerce.Service.CatelogService;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 public class AdminController {
 //      link with productCatalog to add, remove etc
-    private ProductCatalog catalog;
+    private CatelogService catalog;
     private Roles AdminRole;
 
 //    constructor
-    public AdminController(ProductCatalog catalog , Roles AdminRole){
+    public AdminController(CatelogService catalog , Roles AdminRole){
         this.catalog = catalog;
         this. AdminRole =  AdminRole;
     }
@@ -32,7 +31,7 @@ public class AdminController {
 //    remove products
     public void removeProducts(String name){
         if( AdminRole == Roles.ADMIN){
-            String result = catalog.removeProducts(name);
+            String result = catalog.removeProduct(name);
             System.out.println(result);
         }else{
             System.out.println(" ❌❌❌ Access Denied , Only Admins can Remove.");
@@ -42,7 +41,7 @@ public class AdminController {
 //    display products
     public void viewCatalog(String name){
         System.out.println("Products Catalogs: ");
-        for(Products DC : catalog.displayAllProducts()){
+        for(Products DC : catalog.displayProduct()){
             System.out.println( DC.getId() + "." + DC.getName() + " - $" + DC.getPrice() + "|"+ DC.getDescription());
         };
     }

@@ -1,0 +1,10 @@
+admin will use CatelogService instead of ProductCatalog , incase ProductCatelog should change
+it will not affect Admin code.
+ CatalogService to handle all business logic for the catalog
+it is not meant to store data.
+
+
+so admin calls catalogService.addProduct()
+and catalogService calls  productCatalog.addProduct()
+
+and productCatalog will store the actual data .

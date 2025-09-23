@@ -3,17 +3,19 @@ package APTECHAssignment.Ecommerce.Customer;
 import APTECHAssignment.Ecommerce.Enum.Roles;
 import APTECHAssignment.Ecommerce.Model.Products;
 import APTECHAssignment.Ecommerce.Model.ShoppingCart;
+import APTECHAssignment.Ecommerce.Service.CartService;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class CustomerController {
-       private ShoppingCart shoppingCart;
+       private CartService cartService;
         private Roles userRole;
 
 
-   public CustomerController(ShoppingCart shoppingCart , Roles  userRole){
-       this.shoppingCart = shoppingCart;
+   public CustomerController(CartService cartService , Roles  userRole){
+       this.cartService = cartService;
        this.userRole =  userRole;
    }
 
@@ -22,7 +24,7 @@ public class CustomerController {
         if(userRole == Roles.CUSTOMER){
             Products cart = new Products(id , name, description , price);
             String entryDate = LocalDate.now().toString();
-            String result = shoppingCart.addItem(cart);
+            String result = cartService.addProduct(cart);
             System.out.println(result + "Added on: "+ entryDate);
         }else{
             System.out.println(" ❌❌❌ Access Denied , Only Customers can Add products.");
@@ -31,7 +33,7 @@ public class CustomerController {
 //    remove from cart
     public void RemoveFromCart(String ProductName){
         if( userRole == Roles.CUSTOMER){
-            String result = shoppingCart.removeItem(ProductName);
+            String result = cartService.removeItem(ProductName);
             System.out.println(result);
         }else{
             System.out.println(" ❌❌❌PRODUCT DENIED TO CART");
@@ -40,20 +42,23 @@ public class CustomerController {
 
 //    view cart
 
-   public  void viewCart() {
-       if (userRole == Roles.CUSTOMER) {
-           System.out.println(" 🛒🛒🛒 Cart Items:");
-           for (Products CP : shoppingCart.viewCart()) {
-               System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity());
-           }
-       } else {
-           System.out.println(" ❌❌❌Cart DENIED");
-       }
-   }
+//   public  String viewCart() {
+//       if (userRole == Roles.CUSTOMER) {
+////          List<Products> cartItem = cartService.viewCart();
+//           for (Products CP : cartService.viewCart() ) {
+//               System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity());
+//           }
+//           System.out.println("Total Items: " + cartService.TotalItem());
+//           System.out.println("Total cost: " +cartService.totalCost());
+//       } else {
+//           System.out.println(" ❌❌❌Cart DENIED");
+//       }
+//       return "";
+//   }
     // Checkout Summary
     void  totalNumberItem(){
         if (userRole == Roles.CUSTOMER){
-            String total = String.valueOf(shoppingCart.totalNumberItem());
+            String total = String.valueOf(cartService.TotalItem());
             System.out.println(total);
         }else{
             System.out.println("❌❌❌❌❌❌❌");
