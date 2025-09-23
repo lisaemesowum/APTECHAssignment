@@ -17,12 +17,14 @@ public class AdminController {
         this. AdminRole =  AdminRole;
     }
     // admin to add product  only allow role is admin
-    public void addProducts(int id, String name, String description , double price){
+    public void addProducts(int id, String name, String description , double price, String entryDate){
        if( AdminRole == Roles.ADMIN){
            Products products = new Products(id, name,description , price);
-           String entryDate = LocalDate.now().toString();
+            LocalDate.now().toString();
            String result = catalog.addProduct(products);
-           System.out.println(result + "Added on: "+ entryDate);
+           System.out.println("|➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖|");
+           System.out.println("|" +result + " Added on : "+ entryDate);
+           System.out.println("|➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖|\n");
        }else{
            System.out.println(" ❌❌❌ Access Denied , Only Admins can Add products.");
        }
@@ -39,7 +41,7 @@ public class AdminController {
     }
 
 //    display products
-    public void viewCatalog(String name){
+    public void viewCatalog(){
         System.out.println("Products Catalogs: ");
         for(Products DC : catalog.displayProduct()){
             System.out.println( DC.getId() + "." + DC.getName() + " - $" + DC.getPrice() + "|"+ DC.getDescription());

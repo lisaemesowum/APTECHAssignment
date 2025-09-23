@@ -1,6 +1,7 @@
 package APTECHAssignment.Ecommerce.Model;
 
 public class Products {
+//    private  static int counter = 500;
    private int id;
    private String name;
    private String description;
