@@ -11,3 +11,10 @@ CartService like the cashier or assistant that helps you add, remove , calculate
 
 
 so cartService wraps the shopping cart model and expose methods to add/ remove/view items
+CustomerController calls cartService , not directly the shopping cart so because if it calls shoppingCart directly, then the controller itself will be handling business logic like checking stock, applying discounts updating.
+
+
+
+Service > does the work. or like a WareHouse Manager
+
+

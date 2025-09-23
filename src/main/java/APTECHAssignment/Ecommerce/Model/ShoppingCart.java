@@ -46,6 +46,6 @@ public class ShoppingCart {
         for(Products check : Cart){
             totalCost += check.getPrice();
         }
-        return  " 🛒🛒 Checkout Summary" + totalItem + "items  | Total Cost: $" + totalCost;
+        return  " 🛒🛒 Checkout Summary: " + totalItem + "item's  | Total Cost: $" + totalCost;
     }
 }
