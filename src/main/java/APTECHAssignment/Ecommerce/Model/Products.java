@@ -57,12 +57,13 @@ public class Products {
 
     @Override
     public String toString() {
-        return "Products { " +
-                "id =" + id +
-                ", name ='" + name + '\'' +
-                ", description ='" + description + '\'' +
-                ", quantity =" + quantity +
-                ", price = " + price +
-                '}';
+        System.out.println("\n 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n");
+        return "| Products  " +
+                "             |Id           | " + id + "\n" +
+                "             |Name         | " + name + "\n" +
+                "             |Description  | " + description + "\n" +
+                "             |Quantity     | " + quantity + "\n" +
+                "             |Price        | " + price +
+                "🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n";
     }
 }
