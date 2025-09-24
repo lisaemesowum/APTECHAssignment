@@ -49,13 +49,13 @@ public class EcommerceApp {
 
             switch(choose){
                 case 1:
-                    System.out.println("|➖➖➖➖➖➖➖ ADMIN MENU ➖➖➖➖➖➖➖➖➖|");
-                    System.out.println("| 1: Add Product                                 |");
-                    System.out.println("| 2: Remove Product                              |");
-                    System.out.println("| 3: View Catalog                                |");
-                    System.out.println("| 0: Back                                        |");
-                    System.out.println("|➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖|");
-                    System.out.println("| Enter:                                         |");
+                    System.out.println("|➖➖➖➖➖➖➖ ADMIN MENU ➖➖➖➖➖➖➖➖➖➖|");
+                    System.out.println("| 1: Add Product                                   |");
+                    System.out.println("| 2: Remove Product                                |");
+                    System.out.println("| 3: View Catalog                                  |");
+                    System.out.println("| 0: Back                                          |");
+                    System.out.println("|➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖|");
+                    System.out.println("| Enter:                                          |");
 
                     int AdminChoice = input.nextInt();
                     input.nextLine();
@@ -89,6 +89,37 @@ public class EcommerceApp {
                         default:
                             System.out.println(" invalid choice, try again");
                     }
+                case 2:
+                    System.out.println("|➖➖➖➖➖➖➖➖➖➖➖CUSTOMER MENU➖➖➖➖|");
+                    System.out.println("| 1: View Products                              |");
+                    System.out.println("| 2: Add to Cart                                |");
+                    System.out.println("| 3: View Cart                                  |");
+                    System.out.println("| 4: Remove Product from Cart                   |");
+                    System.out.println("| 5: Total Item                                 |");
+                    System.out.println("| 6: Total Product                              |");
+                    System.out.println("|➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖|");
+                    System.out.println("| Enter:                                        |");
+
+                    int customerChoice = input.nextInt();
+                    input.nextLine();
+
+                  switch (customerChoice){
+                      case 1:
+                          customer.viewCart();
+                          break;
+
+                      case 2:
+                          System.out.println("Enter Product Id");
+                          int cId = input.nextInt();
+                          input.nextLine();
+                          System.out.println("Enter product Name");
+                          String add = input.nextLine();
+                          System.out.println("Enter Description");
+                          String cdesc = input.nextLine();
+                          double  price = input.nextDouble();
+                          customer.addToCart(cId,add,cdesc,price);
+
+                  }
 
             }
         }

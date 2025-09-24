@@ -34,6 +34,7 @@ public class AdminController {
     public void removeProducts(String name){
         if( AdminRole == Roles.ADMIN){
             String result = catalog.removeProduct(name);
+
             System.out.println(result);
         }else{
             System.out.println(" ❌❌❌ Access Denied , Only Admins can Remove.");
@@ -44,7 +45,9 @@ public class AdminController {
     public void viewCatalog(){
         System.out.println("Products Catalogs: ");
         for(Products DC : catalog.displayProduct()){
-            System.out.println( DC.getId() + "." + DC.getName() + " - $" + DC.getPrice() + "|"+ DC.getDescription());
+            System.out.println("|💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶|");
+            System.out.println("|" + DC.getId() + "." + DC.getName() + " - $" + DC.getPrice() + "|"+ DC.getDescription()  +"|");
+            System.out.println("|💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶💶|\n");
         };
     }
 }

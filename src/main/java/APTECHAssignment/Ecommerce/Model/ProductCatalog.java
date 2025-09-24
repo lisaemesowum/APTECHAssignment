@@ -23,6 +23,7 @@ public class ProductCatalog {
         while(productsIterator.hasNext()){
             Products Remove = productsIterator.next();
             if(Remove.getName().equalsIgnoreCase(name)){
+                products.remove(name);
                 return name + " ❌❌❌❌ Products successfully Removed";
             }
         }

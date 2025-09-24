@@ -42,19 +42,19 @@ public class CustomerController {
 
 //    view cart
 
-//   public  String viewCart() {
-//       if (userRole == Roles.CUSTOMER) {
-////          List<Products> cartItem = cartService.viewCart();
-//           for (Products CP : cartService.viewCart() ) {
-//               System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity());
-//           }
-//           System.out.println("Total Items: " + cartService.TotalItem());
-//           System.out.println("Total cost: " +cartService.totalCost());
-//       } else {
-//           System.out.println(" ❌❌❌Cart DENIED");
-//       }
-//       return "";
-//   }
+   public  String viewCart() {
+       if (userRole == Roles.CUSTOMER) {
+//          List<Products> cartItem = cartService.viewCart();
+           for (Products CP : cartService.viewCart() ) {
+               System.out.println("-" + CP.getName() + "| $" + CP.getPrice() + "|" + CP.getQuantity());
+           }
+           System.out.println("Total Items: " + cartService.TotalItem());
+           System.out.println("Total cost: " +cartService.totalCost());
+       } else {
+           System.out.println(" ❌❌❌Cart DENIED");
+       }
+       return "";
+   }
     // Checkout Summary
     void  totalNumberItem(){
         if (userRole == Roles.CUSTOMER){
